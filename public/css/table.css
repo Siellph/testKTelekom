@@ -1,0 +1,12 @@
+.table {
+    font-size: 12px !important;
+}
+.table td, .table th {
+    box-sizing: border-box !important;
+    padding: 5px !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+.table td {
+    border: 1px solid grey !important;
+}
