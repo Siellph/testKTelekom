@@ -27,13 +27,13 @@ if (mysqli_num_rows($res) > 0) {
     $res_upd = mysqli_query($connect, $sql_upd);
 
     $log = date('Y-m-d H:i:s').' Внесены изменения: ' . $sql_upd . ' Пользователь: ' . $_COOKIE['login'];
-    file_put_contents(__DIR__ . '../log.txt', $log . PHP_EOL, FILE_APPEND);
+    file_put_contents(__DIR__ . '/log.txt', $log . PHP_EOL, FILE_APPEND);
 } else {
     $sql_add = "INSERT INTO `customers` (`city_org`, `contract`, `name_org`, `phone_number`, `last_name`, `first_name`, `middle_name`, `date_of_birth`, `postal_code`, `country`, `region`, `district`, `city`, `street`, `dtc`, `dtu`) VALUES ('$city_org', '$contract', '$name_org', '$phone_number', '$last_name', '$first_name', '$middle_name', '$date_of_birth', '$postal_code', '$country', '$region', '$district', '$city', '$street', '$dtc', '$dtu')";
     $res_add = mysqli_query($connect, $sql_add);
 
     $log = date('Y-m-d H:i:s') . ' Новая запись ' . $sql_add . ' Пользователь: ' . $_COOKIE['login'];
-    file_put_contents(__DIR__ . '../log.txt', $log . PHP_EOL, FILE_APPEND);
+    file_put_contents(__DIR__ . '/log.txt', $log . PHP_EOL, FILE_APPEND);
 }
 mysqli_close($connect);
 ?>
